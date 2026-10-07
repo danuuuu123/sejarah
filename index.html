@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Historical Battle: Makassar vs VOC</title>
+<style>
+:root{--bg:#0b0d1a;--p:#171a33;--g:#f5c542;--r:#d7263d;--b:#2a6fdb;--o:#ff8a1f;--t:#f4f1e8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(circle at 50% 0,#3a1530,var(--bg) 60%);color:var(--t);font:16px/1.5 system-ui,sans-serif;min-height:100vh}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index5;z-index:5;display:flex;gap:8px;align-items:center;padding:8px 12px;background:#0b0d1aee;border-bottom:2px solid var(--g)}
+header .pr{flex:1;font-size:12px}.bar{height:8px;background:#333;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--o),var(--g));width:0;transition:width .5s}
+button{font:inherit;cursor:pointer;border:0;color:#fff;border-radius:10px;padding:10px 14px;background:linear-gradient(#e8344b,var(--r));font-weight:800;letter-spacing:.5px;border-bottom:3px solid #7d1220;transition:transform .15s}
+button:hover{transform:translateY(-2px) scale(1.03)}button:active{transform:scale(.95)}button.g{background:linear-gradient(#ffd966,var(--g));color:#2b1b00;border-color:#a67c00}button.b{background:linear-gradient(#4a8df0,var(--b));border-color:#143a7a}
+main{max-width:860px;margin:auto;padding:14px}.v{display:none;animation:in .5s}.v.on{display:block}
+@keyframes in{from{opacity:0;transform:translateX(40px) scale(.97)}}
+h1,h2{font-family:Impact,system-ui;text-transform:uppercase;margin:.3em 0;color:var(--g);text-shadow:0 3px 0 #7d1220}h1{font-size:clamp(30px,8vw,56px);text-align:center;line-height:1.05}
+.card{background:linear-gradient(160deg,#222654,var(--p));border:2px solid #3a3f78;border-radius:14px;padding:12px;margin:10px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.mn{text-align:center;padding:16px 8px;border-color:var(--g)}.mn b{display:block;font-size:30px}.mn.d::after{content:"✔ SELESAI";display:block;color:#7dff9a;font-size:11px}
+.sc{height:190px;position:relative;overflow:hidden;border-radius:14px;border:2px solid var(--g);background:linear-gradient(#ff9a3c,#7a2a5a 60%,#1b1f4a);font-size:44px;text-align:center}
+.sc span{position:absolute}.cl{animation:fl 9s linear infinite;opacity:.6;font-size:34px}@keyframes fl{from{left:-15%}to{left:110%}}.fl{animation:bo 2s ease-in-out infinite}@keyframes bo{50%{transform:translateY(-8px)}}
+.tb{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tb button{padding:8px 10px;font-size:13px}.tb .a{outline:3px solid var(--g)}
+.av{font-size:38px;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;float:left;margin-right:10px}
+.G .av{background:var(--r)}.V .av{background:var(--b)}
+canvas{width:100%;background:#000;border-radius:12px;border:2px solid var(--g);display:block}
+.ctl{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.q button{display:block;width:100%;text-align:left;margin:6px 0;background:#2a2f66;border-color:#14173a}.q .ok{background:#1e9b4a!important}.q .no{background:#a11a2c!important}
+small,.lb{color:#cfc9b4;font-size:12px}details{margin:6px 0}
+</style></head><body>
+<header><button class="g" onclick="go('intro')" aria-label="Beranda">🏠</button><div class="pr">MISI: <b id="pc">0</b>/7<div class="bar"><i id="pb"></i></div></div><button class="b" id="mt" onclick="mute=!mute;this.textContent=mute?'🔇':'🔊'">🔊</button></header>
+<main>
+<section class="v on" id="intro"><h1>Historical Battle:<br>Makassar vs VOC</h1><p style="text-align:center;color:var(--g)">Perjuangan Sultan Hasanuddin Melawan Monopoli VOC</p>
+<div class="sc"><span class="cl" style="top:10px">☁️</span><span class="cl" style="top:50px;animation-delay:-4s">☁️</span><span class="fl" style="left:6%;bottom:16px">🏯</span><span class="fl" style="left:36%;bottom:10px;font-size:64px">👑</span><span class="fl" style="right:8%;bottom:16px;animation-delay:-1s">⛵</span><span style="left:20%;top:70px;font-size:30px">🚩</span><span style="right:25%;top:70px;font-size:30px">🏴</span></div>
+<p style="text-align:center"><button class="g" style="font-size:20px" onclick="go('menu')">⚔️ MULAI PETUALANGAN</button> <button class="b" onclick="go('guide')">PANDUAN</button></p><small>Karakter dan ilustrasi orisinal, terinspirasi gaya game MOBA. Tanpa kekerasan grafis.</small></section>
+
+<section class="v" id="guide"><h2>Panduan</h2><div class="card">1. Pilih mode di menu utama.<br>2. Selesaikan 7 misi (Story, Heroes, Simulasi sampai selesai, Timeline, Bongaya, Impact, Kuis) untuk mengisi progres.<br>3. Di Simulasi, gunakan PLAY, PAUSE, RESTART, slider kecepatan, dan NEXT EVENT.<br>4. Progres tersimpan otomatis di browser. Tombol 🔊 mematikan efek suara.</div><button onclick="go('menu')">KE MENU</button></section>
+
+<section class="v" id="menu"><h2>Pilih Mode</h2><div class="grid" id="mg"></div></section>
+
+<section class="v" id="story"><h2>📖 Story Mode</h2><div class="tb" id="sb"></div><div class="card" id="sc2"></div></section>
+
+<section class="v" id="heroes"><h2>🛡️ Heroes</h2><div id="hg"></div></section>
+
+<section class="v" id="sim"><h2>⚔️ Battle Simulation</h2><canvas id="cv" width="360" height="200"></canvas>
+<div class="ctl"><button class="g" onclick="P()">▶ PLAY</button><button onclick="play=false">⏸ PAUSE</button><button class="b" onclick="R()">↺ RESTART</button><button onclick="N()">⏭ NEXT EVENT</button></div>
+<div class="ctl"><label>Kecepatan <input id="spd" type="range" min=".5" max="3" step=".5" value="1" oninput="sp=+this.value"></label></div>
+<div class="card"><b id="sy" style="color:var(--g)">1654–1655</b><p id="sn" style="margin:4px 0">Tekan PLAY untuk memulai.</p><div class="lb">Situasi: <span id="sl"></span></div><div class="bar" style="background:var(--b)"><i id="sbar" style="background:var(--r);width:50%"></i></div><div class="lb" style="display:flex;justify-content:space-between"><span>Gowa-Tallo</span><span>VOC + sekutu</span></div></div>
+<div class="card" id="rs" hidden><b>Hasil Peristiwa</b><br>Gowa-Tallo kalah dalam tekanan militer dan terpaksa menerima Perjanjian Bongaya, lalu Benteng Somba Opu jatuh pada 1669. Monopoli VOC menguat dan kekuasaan Gowa-Tallo melemah, tetapi semangat perlawanan Sultan Hasanuddin dikenang sebagai teladan.</div>
+<small>Rekonstruksi animasi berdasarkan peristiwa sejarah (bukan rekaman asli).</small></section>
+
+<section class="v" id="timeline"><h2>⏳ Timeline</h2><div class="tb" id="tl"></div><div class="card" id="td"></div></section>
+
+<section class="v" id="treaty"><h2>📜 Perjanjian Bongaya</h2><p>18 November 1667. Ketuk kartu untuk melihat dampaknya.</p><div id="tr"></div></section>
+
+<section class="v" id="impact"><h2>🏆 Akibat Perlawanan</h2><div class="card" style="border-color:var(--g)"><ul><li>Kekuasaan Kerajaan Gowa-Tallo melemah.</li><li>VOC semakin menguasai perdagangan di Makassar.</li><li>Benteng Somba Opu jatuh pada 1669.</li><li>Kebebasan perdagangan Makassar semakin terbatas.</li><li>Sultan Hasanuddin dikenang sebagai Pahlawan Nasional Indonesia.</li></ul></div><h2>Nilai Perjuangan</h2><div class="grid" id="vl"></div></section>
+
+<section class="v" id="quiz"><h2>🎯 Quiz Mode</h2><div class="card q" id="qz"></div></section>
+</main>
+<script>
+const $=s=>document.querySelector(s);let mute=false,done=new Set();
+try{done=new Set(JSON.parse(localStorage.getItem('hb')||'[]'))}catch(e){}
+let ac;function snd(f=520,d=.08){if(mute)return;try{ac=ac||new AudioContext();const o=ac.createOscillator(),g=ac.createGain();o.type='square';o.frequency.value=f;g.gain.value=.04;o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch(e){}}
+const M=[['story','📖','STORY MODE'],['heroes','🛡️','HEROES'],['sim','⚔️','BATTLE SIMULATION'],['timeline','⏳','TIMELINE'],['treaty','📜','TREATY OF BONGAYA'],['impact','🏆','IMPACT'],['quiz','🎯','QUIZ MODE']];
+function mark(k){done.add(k);try{localStorage.setItem('hb',JSON.stringify([...done]))}catch(e){}ui()}
+function ui(){$('#pc').textContent=done.size;$('#pb').style.width=done.size/7*100+'%';$('#mg').innerHTML=M.map(m=>`<button class="card mn ${done.has(m[0])?'d':''}" onclick="go('${m[0]}')"><b>${m[1]}</b>${m[2]}</button>`).join('')}
+let simOn=false;
+function go(id){document.querySelectorAll('.v').forEach(v=>v.classList.remove('on'));$('#'+id).classList.add('on');scrollTo(0,0);snd(660);simOn=id=='sim';if(['story','heroes','timeline','treaty','impact'].includes(id))mark(id);if(id=='quiz')Q0();}
+// STORY
+const CH=[['Bab 1 · Latar Belakang','<p>Perlawanan Makassar terjadi karena persaingan antara Kesultanan Gowa-Tallo dengan VOC dalam perdagangan di Indonesia bagian timur.</p><p>Makassar merupakan pusat perdagangan penting karena letaknya strategis dan pelabuhannya ramai. VOC ingin menguasai perdagangan tersebut melalui monopoli, sedangkan Gowa-Tallo di bawah Sultan Hasanuddin berusaha mempertahankan kebebasan perdagangan.</p>'],['Bab 2 · Tokoh-Tokoh','<p>Pihak Makassar: Sultan Hasanuddin, Karaeng Karunrung, Karaeng Galesong.<br>Pihak VOC dan sekutu: Cornelis Speelman, Arung Palakka.</p><button class="g" onclick="go(\'heroes\')">LIHAT KARTU HERO</button>'],['Bab 3 · Jalannya Perlawanan','']];
+$('#sb').innerHTML=CH.map((c,i)=>`<button onclick="ch(${i})" id="cb${i}">${c[0].split(' ·')[0]}</button>`).join('');
+function ch(i){document.querySelectorAll('#sb button').forEach(b=>b.classList.remove('a'));$('#cb'+i).classList.add('a');snd(500);$('#sc2').innerHTML=`<h3 style="color:var(--g)">${CH[i][0]}</h3>`+(i<2?CH[i][1]:E.map(e=>`<div class="card"><b>${e.e} ${e.y}</b><br>${e.t}</div>`).join(''))}
+// HEROES
+const H=[['G','👑','Sultan Hasanuddin','Sultan Gowa yang memimpin perlawanan terhadap VOC. Dijuluki "Ayam Jantan dari Timur".'],['G','🛡️','Karaeng Karunrung','Tokoh penting dalam perjuangan Gowa.'],['G','⚓','Karaeng Galesong','Melanjutkan perjuangan melawan VOC setelah Perjanjian Bongaya.'],['V','🎩','Cornelis Speelman','Pemimpin pasukan VOC dalam perang melawan Gowa.'],['V','🗡️','Arung Palakka','Bangsawan Bone yang bersekutu dengan VOC untuk melawan Gowa.']];
+$('#hg').innerHTML=H.map(h=>`<div class="card ${h[0]}" onclick="snd(800)"><div class="av">${h[1]}</div><b>${h[2]}</b><br><small>${h[0]=='G'?'Pihak Gowa-Tallo':'Pihak VOC & sekutu'}</small><br>${h[3]}<div style="clear:both"></div></div>`).join('');
+// EVENTS
+const E=[{y:'1654–1655',e:'⚖️',b:.6,t:'Ketegangan Gowa dan VOC meningkat karena VOC berusaha membatasi perdagangan Makassar. Gowa menolak keinginan VOC untuk memonopoli perdagangan.',w:'Sultan Hasanuddin',s:'Ketegangan dagang'},
+{y:'1666–1667',e:'🚢',b:.45,t:'VOC mengirim pasukan di bawah Cornelis Speelman, bersekutu dengan Arung Palakka dan pasukan Bone. Terjadi pertempuran antara Gowa dan gabungan VOC-Bone.',w:'Speelman, Arung Palakka, Karunrung',s:'Gowa mulai tertekan'},
+{y:'18 November 1667',e:'📜',b:.25,t:'Gowa mengalami tekanan akibat serangan VOC. Sultan Hasanuddin akhirnya menandatangani Perjanjian Bongaya.',w:'Sultan Hasanuddin, Speelman',s:'Gowa terdesak'},
+{y:'1668–1669',e:'🔥',b:.35,t:'Sultan Hasanuddin berusaha melawan kembali karena tidak menerima sepenuhnya isi perjanjian. VOC kembali menyerang.',w:'Sultan Hasanuddin, Karaeng Galesong',s:'Perlawanan bangkit'},
+{y:'1669',e:'🏯',b:.1,t:'VOC berhasil menguasai Benteng Somba Opu. Perlawanan besar Gowa akhirnya berakhir.',w:'Speelman, Arung Palakka',s:'Somba Opu jatuh'}];
+$('#tl').innerHTML=E.map((e,i)=>`<button onclick="tl(${i})" id="tb${i}">${e.y}</button>`).join('');
+function tl(i){document.querySelectorAll('#tl button').forEach(b=>b.classList.remove('a'));$('#tb'+i).classList.add('a');snd(560);const e=E[i];$('#td').innerHTML=`<div style="font-size:60px;text-align:center">${e.e}</div><h3 style="color:var(--g)">${e.y}</h3><p>${e.t}</p><p><b>Tokoh:</b> ${e.w}</p><button class="g" onclick="go('sim');T=${i};res=false">LIHAT SIMULASI</button>`}
+tl(0);ch(0);
+// TREATY
+const TR=[['Pengakuan monopoli VOC','Gowa mengakui monopoli perdagangan VOC.','Gowa kehilangan kebebasan berdagang yang menjadi sumber kekuatan ekonominya.'],['Pedagang asing diusir','Pedagang asing selain VOC harus meninggalkan Makassar.','Makassar tidak lagi ramai sebagai pelabuhan internasional dan pendapatan menurun.'],['Penyerahan wilayah','Gowa menyerahkan wilayah tertentu kepada VOC dan sekutunya.','Wilayah dan pengaruh politik Gowa-Tallo menyusut.'],['Biaya perang','Gowa harus menanggung biaya perang sesuai ketentuan perjanjian.','Beban keuangan memperlemah kesultanan.'],['Benteng diserahkan atau dihancurkan','Benteng-benteng tertentu harus diserahkan atau dihancurkan.','Pertahanan Gowa melemah dan sulit melawan serangan berikutnya.']];
+$('#tr').innerHTML=TR.map((t,i)=>`<div class="card" onclick="snd(700);this.querySelector('p').hidden=!this.querySelector('p').hidden" style="cursor:pointer;border-color:var(--o)"><b>📄 Pasal ${i+1}: ${t[0]}</b><br>${t[1]}<p hidden style="color:var(--g)"><b>Dampak:</b> ${t[2]}</p></div>`).join('');
+// VALUES
+const VL=[['🦁','Keberanian','Berani menyampaikan pendapat dan menolak ajakan yang salah.'],['💪','Pantang Menyerah','Belajar lagi setelah nilai ujian kurang baik.'],['🇮🇩','Cinta Tanah Air','Bangga memakai produk dan budaya lokal.'],['🏰','Mempertahankan Kedaulatan','Menjaga hak dan kejujuran diri sendiri.'],['⚖️','Menolak Ketidakadilan','Membela teman yang di-bully.'],['🤝','Kepentingan Rakyat','Aktif dalam kerja bakti dan kegiatan kelas.']];
+$('#vl').innerHTML=VL.map(v=>`<div class="card" style="text-align:center"><div class="fl" style="font-size:40px">${v[0]}</div><b>${v[1]}</b><br><small>${v[2]}</small></div>`).join('');
+// SIM
+const cv=$('#cv'),c=cv.getContext('2d'),W=360,H2=200;let T=0,play=false,sp=1,bal=.6,fx=[],last=0,res=false,ci=-1,fa=0;
+function P(){if(T>=E.length){R()}play=true;res=false;$('#rs').hidden=true;snd(880)}
+function R(){T=0;bal=.6;play=true;res=false;ci=-1;$('#rs').hidden=true;snd(400)}
+function N(){T=Math.min(E.length-.01,Math.floor(T)+1);if(Math.floor(T)>=E.length-1&&T>=E.length-.02)T=E.length-1;snd(700)}
+function unit(x,y,col,s,ld,ph,t){const b=play?Math.abs(Math.sin(t/140+ph))*4:0;y-=b;c.fillStyle=col;c.fillRect(x-4*s,y-12*s,8*s,12*s);c.fillStyle='#f3c9a0';c.beginPath();c.arc(x,y-16*s,5*s,0,7);c.fill();if(ld){c.fillStyle='#f5c542';c.fillRect(x-5*s,y-24*s,10*s,4*s)}c.strokeStyle='#ddd';c.lineWidth=2;c.beginPath();c.moveTo(x+5*s,y-8*s);c.lineTo(x+(col=='#d7263d'?14:-14)*s,y-18*s-b);c.stroke()}
+function draw(t){requestAnimationFrame(draw);if(!simOn)return;const k=Math.min(.05,(t-last)/1000||0);last=t;
+if(play){T+=k*sp*.12;if(T>=E.length){T=E.length;play=false;res=true;$('#rs').hidden=false;mark('sim')}}
+const i=Math.min(E.length-1,Math.floor(T));bal+=(E[i].b-bal)*k*1.5;
+if(i!=ci){ci=i;$('#sy').textContent=E[i].y;$('#sn').textContent=E[i].t;$('#sl').textContent=E[i].s}
+$('#sbar').style.width=bal*100+'%';
+let g=c.createLinearGradient(0,0,0,H2);g.addColorStop(0,'#ff9a3c');g.addColorStop(.5,'#7a2a5a');g.addColorStop(1,'#1b1f4a');c.fillStyle=g;c.fillRect(0,0,W,H2);
+c.fillStyle='#16407a';c.fillRect(0,95,W,45);c.strokeStyle='#4a8df0';c.lineWidth=1;for(let x=0;x<W;x+=30){c.beginPath();c.arc(x+(t/40)%30,110,6,3.3,6);c.stroke()}
+c.fillStyle='#3b5a2a';c.fillRect(0,140,W,60);
+for(let s=0;s<2;s++){const x=240+s*80,y=100+Math.sin(t/400+s)*3;c.fillStyle='#5a3a1a';c.fillRect(x,y,40,10);c.fillStyle='#fff';c.fillRect(x+18,y-26,2,26);c.beginPath();c.moveTo(x+20,y-26);c.lineTo(x+38,y-8);c.lineTo(x+20,y-8);c.fill();c.fillStyle='#2a6fdb';c.fillRect(x+4,y-2,32,3)}
+c.fillStyle='#8a6a4a';c.fillRect(0,95,50,60);c.fillRect(0,85,14,10);c.fillRect(36,85,14,10);c.fillStyle='#5a3a1a';c.fillRect(18,125,14,30);
+const fall=T>=4.4;c.fillStyle='#ddd';c.fillRect(24,50,2,35);c.fillStyle=fall?'#777':'#d7263d';const w=Math.sin(t/150)*3;c.beginPath();c.moveTo(26,52);c.lineTo(48,56+w);c.lineTo(26,64);c.fill();
+const f=70+bal*200;
+for(let n=0;n<6;n++){unit(Math.max(58,f-(n?20+n*20:22)),175-n%2*10,'#d7263d',n?1:1.5,n==0,n,t);unit(f+16+n*20,175-n%2*10,'#2a6fdb',1,0,n+2,t)}
+if(play&&Math.random()<k*7)fx.push({x:f+(Math.random()*20-10),y:125+Math.random()*40,l:1,s:['POW!','CLANG!','BAM!'][Math.random()*3|0]});
+fx=fx.filter(o=>(o.l-=k*1.8)>0);fx.forEach(o=>{c.globalAlpha=o.l;c.fillStyle='#ffd966';c.beginPath();c.arc(o.x,o.y,(1-o.l)*14+3,0,7);c.fill();c.fillStyle='#fff';c.font='bold 13px Impact';c.fillText(o.s,o.x-16,o.y-14-(1-o.l)*12);c.globalAlpha=1});
+c.fillStyle='#0008';c.fillRect(0,0,W,16);c.fillStyle='#fff';c.font='11px sans-serif';c.fillText(E[i].y+' · '+E[i].s,6,12);}
+requestAnimationFrame(draw);
+// QUIZ
+const QS=[['Siapa Sultan Gowa yang memimpin perlawanan terhadap VOC?',['Sultan Agung','Sultan Hasanuddin','Sultan Ageng Tirtayasa','Sultan Iskandar Muda'],1,'Sultan Hasanuddin memimpin Gowa melawan VOC.'],
+['Apa yang ingin dilakukan VOC di Makassar?',['Monopoli perdagangan','Membuka sekolah','Membangun kuil','Membagi pelabuhan'],0,'VOC ingin menguasai perdagangan melalui monopoli.'],
+['Mengapa Makassar penting bagi perdagangan?',['Dekat gunung berapi','Letak strategis dan pelabuhan ramai','Tidak ada pedagang asing','Tanahnya subur saja'],1,'Letak strategis dan pelabuhan yang ramai menjadikannya pusat dagang.'],
+['Siapa pemimpin pasukan VOC melawan Gowa?',['Arung Palakka','Karaeng Galesong','Cornelis Speelman','Karunrung'],2,'Cornelis Speelman memimpin pasukan VOC.'],
+['Bangsawan Bone yang bersekutu dengan VOC adalah...',['Arung Palakka','Karaeng Karunrung','Sultan Agung','Trunajaya'],0,'Arung Palakka bersekutu dengan VOC melawan Gowa.'],
+['Kapan Perjanjian Bongaya ditandatangani?',['1 Mei 1655','18 November 1667','10 Agustus 1669','17 Agustus 1945'],1,'Perjanjian Bongaya ditandatangani pada 18 November 1667.'],
+['Salah satu isi Perjanjian Bongaya adalah...',['Gowa bebas berdagang','Gowa mengakui monopoli VOC','VOC pergi dari Makassar','Gowa menguasai Bone'],1,'Gowa harus mengakui monopoli perdagangan VOC.'],
+['Benteng apa yang dikuasai VOC pada 1669?',['Benteng Rotterdam','Benteng Vredeburg','Benteng Somba Opu','Benteng Marlborough'],2,'Benteng Somba Opu jatuh pada 1669.'],
+['Siapa yang melanjutkan perjuangan setelah Perjanjian Bongaya?',['Karaeng Galesong','Cornelis Speelman','Arung Palakka','Daendels'],0,'Karaeng Galesong melanjutkan perjuangan melawan VOC.'],
+['Akibat perlawanan Gowa terhadap VOC adalah...',['Gowa makin kuat','Kekuasaan Gowa-Tallo melemah','Perdagangan makin bebas','VOC pergi'],1,'Kekuasaan Gowa-Tallo melemah dan VOC makin menguasai perdagangan.']];
+let qi=0,sc=0,lock=false;
+function Q0(){qi=0;sc=0;Q()}
+function Q(){lock=false;if(qi>=QS.length){const bd=sc>=9?'👑 Sultan Sejati':sc>=7?'⚔️ Panglima Gowa':sc>=5?'🛡️ Prajurit Berani':'🌱 Rekrut Baru';mark('quiz');$('#qz').innerHTML=`<div style="text-align:center"><div style="font-size:60px">${bd.split(' ')[0]}</div><h3 style="color:var(--g)">${bd.slice(3)}</h3><p>Skor: <b>${sc*10}</b>/100 (${sc}/10 benar)</p><button class="g" onclick="Q0()">ULANGI KUIS</button> <button onclick="go('menu')">MENU</button></div>`;return}
+const q=QS[qi];$('#qz').innerHTML=`<div class="bar"><i style="width:${qi/QS.length*100}%"></i></div><small>Soal ${qi+1}/${QS.length} · Skor ${sc}</small><p><b>${q[0]}</b></p>`+q[1].map((o,j)=>`<button onclick="A(${j},this)">${'ABCD'[j]}. ${o}</button>`).join('')+'<div id="fb"></div>'}
+function A(j,el){if(lock)return;lock=true;const q=QS[qi],ok=j==q[2];if(ok)sc++;snd(ok?900:200,.2);el.classList.add(ok?'ok':'no');if(!ok)document.querySelectorAll('.q button')[q[2]].classList.add('ok');$('#fb').innerHTML=`<p><b>${ok?'✅ Benar!':'❌ Salah.'}</b> ${q[3]}</p><button class="g" onclick="qi++;Q()">${qi==QS.length-1?'LIHAT HASIL':'LANJUT'}</button>`}
+ui();
+</script></body></html>
